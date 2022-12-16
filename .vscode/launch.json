@@ -1,0 +1,17 @@
+{
+  "version": "0.1.0",
+  "configurations": [
+    {
+      "name": "Elite: debug server-side",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run develop"
+    },
+    {
+      "name": "Elite: debug client-side",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000"
+    },
+  ]
+}

@@ -1,0 +1,270 @@
+.container {
+  height: 100%;
+}
+
+.row__center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 0 2rem;
+  font-family: 'GothamMedium', 'Inter', sans-serif;
+}
+
+.typography3 {
+  font-size: 30px;
+}
+
+.typography6 {
+  font-weight: 500;
+  text-align: center;
+  width: 50%;
+  font-size: 0.85rem;
+}
+
+.sitename {
+  margin-left: 0.2rem;
+  font-weight: 800;
+  color: #e9ab3e;
+  text-transform: uppercase;
+}
+
+/* COURSE SECTION */
+
+.course__section {
+  background-color: #fbf9ff;
+  padding: 4rem 0;
+}
+
+.item {
+  width: 15rem;
+  height: 20rem;
+  padding: 2rem;
+  background-color: #046059;
+  color: #fff;
+  box-shadow: 0 0 0.3rem 0 rgb(0 0 0 / 35%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 2rem;
+}
+
+.bodylist__item {
+  font-size: small;
+  list-style: disc;
+  text-align: center;
+}
+
+.bodylist {
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hr {
+  width: 80%;
+}
+
+.bodytitle {
+  font-size: small;
+  text-align: center;
+}
+
+.item__outlined {
+  border: 1 solid #046059;
+  width: 15rem;
+  height: 20rem;
+  padding: 2rem;
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 0 0.3rem 0 rgb(4 96 89 / 70%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.courselist {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.headertitle {
+  font-weight: bold;
+  margin: 0;
+  color: #e9ab3e;
+}
+
+.headertitle__outlined {
+  font-weight: bold;
+  margin: 0;
+  color: #046059;
+}
+
+.headertimeline {
+  margin: 0.2rem 0;
+}
+
+/* MAGAZINE SECTION */
+
+.mag__section {
+  padding: 2rem 0rem;
+  background-color: #dfdfdf;
+}
+
+.mag__title {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
+.articlelist,
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.articlemain__image {
+  width: 100%;
+  height: 72%;
+  object-fit: cover;
+}
+
+.articlemain {
+  grid-column: 1/3;
+}
+
+.articleaside {
+  background-color: #fff;
+  width: 90%;
+  height: 72%;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.articlemain__title {
+  font-weight: 700;
+  font-family: 'GothamMedium', 'Inter', sans-serif;
+}
+
+.articlemain__desc {
+  font-size: smaller;
+  font-style: italic;
+}
+
+.articleaside__image {
+  width: 100%;
+  height: auto;
+  margin: 1rem 0 0 0;
+  border-radius: 0.5rem;
+}
+
+.articleaside_title {
+  margin: 0.2rem 0 0;
+}
+
+.articleaside__tag {
+  margin: 0;
+  font-size: smaller;
+  font-weight: bold;
+  font-style: italic;
+  color: #b5b5b5;
+}
+
+.articleaside__desc {
+  margin: 0.6rem 0;
+  font-size: small;
+  text-align: left;
+}
+
+.articleaside__date {
+  font-size: small;
+  font-weight: 600;
+}
+
+/*ABOUT SECTION*/
+.about__section {
+  padding: 4rem 0;
+  background-color: #fbf9ff;
+}
+
+.about__main__title {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.about__main__title span {
+  color: #e9ab3e;
+}
+
+.about-main {
+  grid-column: 1/3;
+  padding: 0 2rem 0 0;
+}
+
+.about__main__desc {
+  text-align: justify;
+  font-size: 14px;
+}
+
+.about__aside {
+  grid-column: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*HELP SECTION*/
+.help__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  padding: 4rem 0;
+  background-color: #fff;
+}
+
+.help__main__desc {
+  font-size: small;
+  width: 50%;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.help__main__title {
+  margin: 0;
+}
+
+.help__main__space {
+  margin: 0 0.5rem;
+}
+
+.help__main__button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.help__main__input {
+  height: 2.5rem;
+  width: 13rem;
+  border-radius: 0;
+  border: 0;
+  box-shadow: 0 0 0.3rem 0 rgb(0 0 0 / 35%);
+  padding: 0 0 0 0.5rem;
+}
