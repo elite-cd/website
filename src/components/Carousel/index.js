@@ -26,16 +26,15 @@ const Carousel = ({ items }) => {
       let slideWidth = slideRef.current.clientWidth;
       if (activeSlide > sliderSize - 1) {
         slideWidth = sliderSize * slideWidth;
-        // containerRef.current.style.display = 'none';
-        // containerRef.current.scrollLeft -= slideWidth;
-        // containerRef.current.style.display = 'block';
-        //activeSlide = 0;
+        containerRef.current.style.display = 'none';
+        containerRef.current.scrollLeft -= slideWidth;
+        containerRef.current.style.display = 'block';
+        activeSlide = 0;
         return;
       }
-      // if (activeSlide == 0) {
-      //   containerRef.current.style.display = 'flex';
-      //   containerRef.current.style.flex = '1 1 100%';
-      // }
+      if (activeSlide == 0) {
+        containerRef.current.style.display = 'flex';
+      }
       containerRef.current.scrollLeft += slideWidth;
       activeSlide += 1;
     }, 2000);
@@ -52,6 +51,7 @@ const Carousel = ({ items }) => {
               <GatsbyImage
                 fluid={item.image.childImageSharp.fluid}
                 alt={`carousel-${i}`}
+                objectFit={'cover'}
                 className={style.background}
                 image={getImage(item.image)}
               />
