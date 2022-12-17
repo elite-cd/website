@@ -26,3 +26,12 @@ li {
   font-named-instance: 'Regular';
   src: url(/fonts/GothamMedium.woff2) format('woff2');
 }
+
+@font-face {
+  font-family: 'GothamLight';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url(/fonts/GothamLight.woff2) format('woff2');
+}

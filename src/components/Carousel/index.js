@@ -1,7 +1,9 @@
+import { faCircleArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { useIntl } from 'gatsby-plugin-intl';
 import T from 'prop-types';
 import * as React from 'react';
+import ButtonRounded from '../Button/button-rounded';
 import * as style from './Carousel.module.scss';
 const Carousel = ({ items }) => {
   const intl = useIntl();
@@ -24,16 +26,16 @@ const Carousel = ({ items }) => {
       let slideWidth = slideRef.current.clientWidth;
       if (activeSlide > sliderSize - 1) {
         slideWidth = sliderSize * slideWidth;
-        containerRef.current.style.display = 'none';
-        containerRef.current.scrollLeft -= slideWidth;
-        containerRef.current.style.display = 'block';
-        activeSlide = 0;
+        // containerRef.current.style.display = 'none';
+        // containerRef.current.scrollLeft -= slideWidth;
+        // containerRef.current.style.display = 'block';
+        //activeSlide = 0;
         return;
       }
-      if (activeSlide == 0) {
-        containerRef.current.style.display = 'flex';
-        containerRef.current.style.flex = '1 1 100%';
-      }
+      // if (activeSlide == 0) {
+      //   containerRef.current.style.display = 'flex';
+      //   containerRef.current.style.flex = '1 1 100%';
+      // }
       containerRef.current.scrollLeft += slideWidth;
       activeSlide += 1;
     }, 2000);
@@ -61,9 +63,19 @@ const Carousel = ({ items }) => {
                     {intl.formatMessage({ id: item.subtitle })}
                   </span>
                 </p>
+                <ButtonRounded
+                  url={'#'}
+                  rightIcon={faCircleArrowRight}
+                  text={'Démarrez votre formation'}
+                />
                 <p className={style.desc}>
                   {intl.formatMessage({ id: item.desc })}
                 </p>
+                <h3 className={style.count}>
+                  +{item.students}
+                  <br />
+                  <span className={style.count__title}>apprenants</span>
+                </h3>
               </div>
             </div>
           </li>

@@ -2,6 +2,7 @@ import { useIntl } from 'gatsby-plugin-intl';
 import T from 'prop-types';
 import * as React from 'react';
 import { ROUTES } from '../../common/constants';
+import Logo from '../Logo';
 import * as style from './Menu.module.scss';
 import MenuItem from './MenuItem';
 
@@ -10,9 +11,7 @@ const Menu = () => {
   return (
     <div className={style.container}>
       <nav className={style.navbar}>
-        <div className={style.logo}>
-          <p>Logo</p>
-        </div>
+        <Logo className={style.logo} />
         <ul className={style['navlinks']}>
           <input
             className={style.checkbox}

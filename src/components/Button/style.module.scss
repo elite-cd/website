@@ -1,0 +1,66 @@
+.button__outlined,
+.button__primary {
+  padding: 0.7rem 1rem;
+  font-weight: 700;
+  width: 10rem;
+  display: inline-block;
+  line-height: 1;
+  align-self: center;
+  box-shadow: 0 0 0.3rem 0 rgb(0 0 0 / 35%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+}
+
+.button__rounded {
+  padding: 0.8rem 1rem;
+  background-color: #e9ab3e;
+  color: #fff;
+  font-family: 'GothamMedium';
+  border: 2px solid #fff;
+  font-weight: 700;
+  width: 15rem;
+  border-radius: 3em;
+  display: inline-block;
+  line-height: 1;
+  box-shadow: 0 0 0.3rem 0 rgb(0 0 0 / 35%);
+}
+
+.button__rounded:hover {
+  padding: 0.8rem 1rem;
+  background-color: #fff;
+  color: #e9ab3e;
+  border: 2px solid #e9ab3e;
+  cursor: pointer;
+}
+
+.button__outlined {
+  background-color: #fff;
+  color: #046059;
+  border: 2px solid #046059;
+}
+
+.text {
+  margin: 0 0.3rem;
+}
+
+.button__outlined:hover {
+  background-color: #046059;
+  border: 2px solid #fff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.button__primary {
+  background-color: #046059;
+  color: #fff;
+  border: 2px solid #046059;
+}
+
+.button__primary:hover {
+  background-color: #fff;
+  border: 2px solid #046059;
+  color: #046059;
+  cursor: pointer;
+}

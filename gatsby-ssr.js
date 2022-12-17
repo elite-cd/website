@@ -10,5 +10,13 @@ export const onRenderBody = ({ setHeadComponents }) => {
       crossOrigin="anonymous"
       key="GothamMedium"
     />,
+    <link
+      rel="preload"
+      href="/fonts/GothamLight.woff2"
+      as="font"
+      type="font/woff2"
+      crossOrigin="anonymous"
+      key="GothamLight"
+    />,
   ]);
 };

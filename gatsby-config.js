@@ -61,5 +61,12 @@ module.exports = {
         name: 'carousel',
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'courses',
+        path: `${__dirname}/data/courses`,
+      },
+    },
   ],
 };
