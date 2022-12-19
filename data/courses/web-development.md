@@ -1,5 +1,7 @@
 ---
 
+draft: false
+slug: "developpement-web"
 title: "Développement Web"
 timeline: "400h"
 description: "Devenez des développeur et coder vos propres applications web de A à Z"

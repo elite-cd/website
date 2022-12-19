@@ -1,5 +1,7 @@
 ---
 
+draft: false
+slug: "developpement-backend"
 title: "Développement Backend"
 timeline: "400h"
 description: "Devenez des développeur et coder vos propres applications web de A à Z"

@@ -54,7 +54,7 @@ const Footer = () => {
             alt={'Hero Image loading'}
           />
         </p>
-        <p className={style['footer__contact_text']}>Contact</p>
+        <p className={style['footer__contact__text']}>Contact</p>
         <p>
           <FontAwesomeIcon icon={faPhone} /> +243 810 000 000
         </p>

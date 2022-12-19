@@ -1,5 +1,7 @@
 ---
 
+draft: false
+slug: "data-engineer"
 title: "Data Engineer"
 timeline: "600h"
 description: "Devenez des développeur et coder vos propres applications web de A à Z"

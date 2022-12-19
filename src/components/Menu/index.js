@@ -6,7 +6,7 @@ import Logo from '../Logo';
 import * as style from './Menu.module.scss';
 import MenuItem from './MenuItem';
 
-const Menu = () => {
+const Menu = ({ activeRoute }) => {
   const intl = useIntl();
   return (
     <div className={style.container}>
@@ -25,12 +25,13 @@ const Menu = () => {
 
           <div className={style.menu}>
             <MenuItem
-              isActive={true}
+              isActive={activeRoute ? ROUTES.INDEX == activeRoute : true}
               url={ROUTES.INDEX}
               text={intl.formatMessage({ id: 'menu-item.label.home' })}
             />
             <MenuItem
-              url={ROUTES.BLANK}
+              isActive={activeRoute ? ROUTES.ACADEMY == activeRoute : false}
+              url={ROUTES.ACADEMY}
               text={intl.formatMessage({ id: 'menu-item.label.academy' })}
             />
             <MenuItem

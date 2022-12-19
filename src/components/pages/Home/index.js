@@ -4,6 +4,7 @@ import { useIntl } from 'gatsby-plugin-intl';
 
 import T from 'prop-types';
 import * as React from 'react';
+import { ROUTES } from '../../../common/constants';
 import ButtonOutlined from '../../Button/button-outlined';
 import ButtonPrimary from '../../Button/button-primary';
 import Carousel from '../../Carousel';
@@ -14,7 +15,7 @@ import * as style from './Home.module.scss';
 const Home = ({ carouselItems, courses }) => {
   const intl = useIntl();
   return (
-    <PageTemplate>
+    <PageTemplate activeRoute={ROUTES.INDEX}>
       <Carousel items={carouselItems} />
       <div className={style.row__center}>
         <h3 className={style.typography3}>

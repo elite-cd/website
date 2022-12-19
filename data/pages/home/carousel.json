@@ -5,6 +5,7 @@
     "desc": "carousel.home.one.desc",
     "image": "images/carousel1.png",
     "buttontext": "carousel.home.one.button-text",
+    "buttonUrl": "/enregistrement",
     "students": 200
   },
   {
@@ -13,6 +14,7 @@
     "desc": "carousel.home.two.desc",
     "image": "images/carousel2.png",
     "buttontext": "carousel.home.two.button-text",
+    "buttonUrl": "/enregistrement",
     "students": 245
   },
   {
@@ -21,6 +23,7 @@
     "desc": "carousel.home.three.desc",
     "image": "images/carousel3.png",
     "buttontext": "carousel.home.three.button-text",
+    "buttonUrl": "/enregistrement",
     "students": 230
   }
 ]

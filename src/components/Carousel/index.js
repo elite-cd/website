@@ -64,7 +64,7 @@ const Carousel = ({ items }) => {
                   </span>
                 </p>
                 <ButtonRounded
-                  url={'#'}
+                  url={item.buttonUrl}
                   rightIcon={faCircleArrowRight}
                   text={'Démarrez votre formation'}
                 />
