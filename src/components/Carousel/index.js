@@ -23,7 +23,7 @@ const Carousel = ({ items }) => {
   const updateActiveSlide = () => {
     if (intervalFunc) return;
     intervalFunc = setInterval(() => {
-      let slideWidth = slideRef.current.clientWidth;
+      let slideWidth = slideRef.current ? slideRef.current.clientWidth : 1300;
       if (activeSlide > sliderSize - 1) {
         slideWidth = sliderSize * slideWidth;
         containerRef.current.style.display = 'none';
