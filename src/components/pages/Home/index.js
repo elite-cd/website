@@ -8,14 +8,14 @@ import { ROUTES } from '../../../common/constants';
 import ButtonOutlined from '../../Button/button-outlined';
 import ButtonPrimary from '../../Button/button-primary';
 import Carousel from '../../Carousel';
-import PageTemplate from '../../PageTemplate';
+import Page from '../../PageTemplate';
 import CourseItem from './CourseItem';
 import * as style from './Home.module.scss';
 
 const Home = ({ carouselItems, courses }) => {
   const intl = useIntl();
   return (
-    <PageTemplate activeRoute={ROUTES.INDEX}>
+    <Page courses={courses} activeRoute={ROUTES.INDEX}>
       <Carousel items={carouselItems} />
       <div className={style.row__center}>
         <h3 className={style.typography3}>
@@ -36,7 +36,7 @@ const Home = ({ carouselItems, courses }) => {
               title={course.title}
               outlined={i % 2 == 0}
               timeline={course.timeline}
-              descTitle={course.description}
+              descTitle={course.shortDescription}
               outcomes={course.outcomes.split(',')}
               image={course.image}
             />
@@ -159,7 +159,7 @@ const Home = ({ carouselItems, courses }) => {
           <ButtonPrimary text={"S'insrire"} />
         </div>
       </section>
-    </PageTemplate>
+    </Page>
   );
 };
 

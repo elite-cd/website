@@ -1,4 +1,4 @@
-import { faCircleArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { useIntl } from 'gatsby-plugin-intl';
 import T from 'prop-types';
@@ -65,7 +65,7 @@ const Carousel = ({ items }) => {
                 </p>
                 <ButtonRounded
                   url={item.buttonUrl}
-                  rightIcon={faCircleArrowRight}
+                  rightIcon={faCircleChevronRight}
                   text={'Démarrez votre formation'}
                 />
                 <p className={style.desc}>

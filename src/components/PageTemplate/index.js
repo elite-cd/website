@@ -3,10 +3,10 @@ import * as React from 'react';
 import Footer from '../Footer';
 import Menu from '../Menu';
 import * as style from './style.module.scss';
-const Page = ({ children, activeRoute }) => {
+const Page = ({ children, activeRoute, courses }) => {
   return (
     <div className={style.page}>
-      <Menu activeRoute={activeRoute} />
+      <Menu courses={courses} activeRoute={activeRoute} />
       {children}
       <Footer />
     </div>
@@ -15,6 +15,7 @@ const Page = ({ children, activeRoute }) => {
 
 Page.propTypes = {
   children: T.any,
+  courses: T.array,
 };
 
 export default Page;

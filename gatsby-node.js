@@ -30,9 +30,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       createNodeField({
         node,
         name: 'path',
-        value: `/courses/${node.frontmatter.slug}`,
+        value: `/courses/${node.frontmatter.slug}/`,
       });
-      createNodeField({ node, name: 'type', value: CONTENT_TYPE.COURSE });
+      createNodeField({
+        node,
+        name: 'type',
+        value: CONTENT_TYPE.COURSE,
+      });
     }
   }
 };

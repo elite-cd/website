@@ -5,7 +5,7 @@ import Home from '../components/pages/Home';
 const IndexPage = ({ data }) => {
   const carouselItems = data.allCarouselJson.edges.map((edge) => edge.node);
   const courses = data.courses.edges.map((edge) => edge.node.frontmatter);
-  console.log('courses: ', courses);
+  //console.log('courses: ', courses);
   return <Home carouselItems={carouselItems} courses={courses} />;
 };
 
@@ -38,7 +38,9 @@ export const pageQuery = graphql`
             title
             timeline
             description
+            shortDescription
             outcomes
+            slug
             image {
               childImageSharp {
                 gatsbyImageData(
