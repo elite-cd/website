@@ -47,7 +47,7 @@ const Menu = ({ activeRoute }) => {
               text={intl.formatMessage({ id: 'menu-item.label.about' })}
             />
             <MenuItem
-              url={ROUTES.BLANK}
+              url={ROUTES.CONTACT}
               text={intl.formatMessage({ id: 'menu-item.label.contacts' })}
             />
           </div>
