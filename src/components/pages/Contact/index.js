@@ -5,8 +5,8 @@ import TextArea from '../../TextArea';
 import TextInput from '../../TextInput';
 import * as style from './Contact.module.scss';
 const Contact = () => {
-  return (
-    <Page>
+  const renderContactForm = () => {
+    return (
       <div className={style.container}>
         <p className={style.navigation}>{'Accueil > Contact >'}</p>
         <h3 className={style.title}>Contact</h3>
@@ -49,8 +49,9 @@ const Contact = () => {
           </div>
         </form>
       </div>
-    </Page>
-  );
+    );
+  };
+  return <Page>{renderContactForm}</Page>;
 };
 
 export default Contact;

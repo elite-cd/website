@@ -91,7 +91,7 @@ const CoursePage = ({ course, otherCourses }) => {
       </div>
     </React.Fragment>
   );
-  return <Page>{(courses) => renderCoursePage()}</Page>;
+  return <Page>{renderCoursePage}</Page>;
 };
 
 export default CoursePage;

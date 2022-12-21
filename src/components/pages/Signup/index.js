@@ -118,7 +118,7 @@ const Enregistrement = () => {
     );
   };
 
-  return <Page>{(couses) => renderSignupPage()}</Page>;
+  return <Page>{renderSignupPage}</Page>;
 };
 
 export default Enregistrement;
