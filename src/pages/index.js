@@ -4,9 +4,8 @@ import Home from '../components/pages/Home';
 
 const IndexPage = ({ data }) => {
   const carouselItems = data.allCarouselJson.edges.map((edge) => edge.node);
-  const courses = data.courses.edges.map((edge) => edge.node.frontmatter);
   //console.log('courses: ', courses);
-  return <Home carouselItems={carouselItems} courses={courses} />;
+  return <Home carouselItems={carouselItems} />;
 };
 
 export const pageQuery = graphql`
@@ -26,28 +25,6 @@ export const pageQuery = graphql`
                 placeholder: DOMINANT_COLOR
                 formats: [AUTO, WEBP, AVIF]
               )
-            }
-          }
-        }
-      }
-    }
-    courses: allMarkdownRemark(limit: 10) {
-      edges {
-        node {
-          frontmatter {
-            title
-            timeline
-            description
-            shortDescription
-            outcomes
-            slug
-            image {
-              childImageSharp {
-                gatsbyImageData(
-                  placeholder: DOMINANT_COLOR
-                  formats: [AUTO, WEBP, AVIF]
-                )
-              }
             }
           }
         }

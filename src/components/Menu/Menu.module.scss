@@ -68,6 +68,7 @@
   position: absolute; /*WITH RESPECT TO PARENT*/
   display: none;
   top: 1.5rem;
+  z-index: 999;
 }
 
 .dropdown li + li {

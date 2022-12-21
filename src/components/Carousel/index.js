@@ -33,7 +33,9 @@ const Carousel = ({ items }) => {
         return;
       }
       if (activeSlide == 0) {
-        containerRef.current.style.display = 'flex';
+        containerRef.current
+          ? (containerRef.current.style.display = 'flex')
+          : null;
       }
       containerRef.current.scrollLeft += slideWidth;
       activeSlide += 1;

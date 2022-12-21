@@ -1,15 +1,49 @@
+import { graphql, StaticQuery } from 'gatsby';
 import T from 'prop-types';
 import * as React from 'react';
 import Footer from '../Footer';
 import Menu from '../Menu';
 import * as style from './style.module.scss';
-const Page = ({ children, activeRoute, courses }) => {
+const Page = ({ children, activeRoute }) => {
   return (
-    <div className={style.page}>
-      <Menu courses={courses} activeRoute={activeRoute} />
-      {children}
-      <Footer />
-    </div>
+    <StaticQuery
+      query={graphql`
+        query {
+          courses: allMarkdownRemark(limit: 10) {
+            edges {
+              node {
+                frontmatter {
+                  title
+                  timeline
+                  description
+                  shortDescription
+                  outcomes
+                  slug
+                  image {
+                    childImageSharp {
+                      gatsbyImageData(
+                        placeholder: DOMINANT_COLOR
+                        formats: [AUTO, WEBP, AVIF]
+                      )
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      `}
+      render={(data) => {
+        const courses = data.courses.edges.map((edge) => edge.node.frontmatter);
+        return (
+          <div className={style.page}>
+            <Menu courses={courses} activeRoute={activeRoute} />
+            {children(courses)}
+            <Footer />
+          </div>
+        );
+      }}
+    />
   );
 };
 

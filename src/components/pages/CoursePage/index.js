@@ -12,8 +12,9 @@ import * as style from './CoursePage.module.scss';
 
 const CoursePage = ({ course, otherCourses }) => {
   const outcomesList = course.outcomes.split(',');
-  return (
-    <Page>
+
+  const renderCoursePage = () => (
+    <React.Fragment>
       <div className={style.container}>
         <div className={style.header}>
           <p>
@@ -88,8 +89,9 @@ const CoursePage = ({ course, otherCourses }) => {
           </div>
         </section>
       </div>
-    </Page>
+    </React.Fragment>
   );
+  return <Page>{(courses) => renderCoursePage()}</Page>;
 };
 
 export default CoursePage;
