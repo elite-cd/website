@@ -3,11 +3,17 @@ import T from 'prop-types';
 import * as React from 'react';
 import { ROUTES } from '../../common/constants';
 import Logo from '../Logo';
+import DropdownItem from './DropdownItem';
 import * as style from './Menu.module.scss';
 import MenuItem from './MenuItem';
 
-const Menu = ({ activeRoute }) => {
+const Menu = ({ activeRoute, courses }) => {
   const intl = useIntl();
+  const ACADEMY_COURSES =
+    courses &&
+    courses.map((course) => {
+      return { text: course.title, url: `/courses/${course.slug}` };
+    });
   return (
     <div className={style.container}>
       <nav className={style.navbar}>
@@ -29,10 +35,11 @@ const Menu = ({ activeRoute }) => {
               url={ROUTES.INDEX}
               text={intl.formatMessage({ id: 'menu-item.label.home' })}
             />
-            <MenuItem
+            <DropdownItem
               isActive={activeRoute ? ROUTES.ACADEMY == activeRoute : false}
-              url={ROUTES.ACADEMY}
+              url={'#'}
               text={intl.formatMessage({ id: 'menu-item.label.academy' })}
+              links={ACADEMY_COURSES}
             />
             <MenuItem
               url={ROUTES.BLANK}
@@ -47,7 +54,7 @@ const Menu = ({ activeRoute }) => {
               text={intl.formatMessage({ id: 'menu-item.label.about' })}
             />
             <MenuItem
-              url={ROUTES.BLANK}
+              url={ROUTES.CONTACT}
               text={intl.formatMessage({ id: 'menu-item.label.contacts' })}
             />
           </div>

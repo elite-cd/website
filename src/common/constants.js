@@ -3,4 +3,5 @@ export const ROUTES = {
   BLANK: '#',
   SIGNUP: '/enregistrement',
   ACADEMY: '/academie',
+  CONTACT: '/contact',
 };

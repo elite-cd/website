@@ -2,6 +2,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import T from 'prop-types';
 import * as React from 'react';
+import ButtonOulined from './button-outlined';
+import ButtonPrimary from './button-primary';
+import ButtonRounded from './button-rounded';
 import * as style from './style.module.scss';
 const Button = ({ text, className, leftIcon, rightIcon }) => {
   return (
@@ -36,6 +39,6 @@ Button.propTypes = {
   IconComponent: T.any,
 };
 
-export { ButtonLink };
+export { ButtonLink, ButtonRounded, ButtonPrimary, ButtonOulined };
 
 export default Button;

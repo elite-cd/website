@@ -1,18 +1,20 @@
 import { graphql } from 'gatsby';
-import * as React from 'react';
+import React from 'react';
 import CoursePage from '../components/pages/CoursePage';
 
 const courseMarkdownRemark = ({ frontmatter }) => ({
   title: frontmatter.title,
   timeline: frontmatter.timeline,
   description: frontmatter.description,
+  shortDescription: frontmatter.shortDescription,
   outcomes: frontmatter.outcomes,
   slug: frontmatter.slug,
   image: frontmatter.image ? frontmatter.image.childImageSharp : null,
   path: frontmatter.path,
 });
 
-export default CourseTemplate = () => {
+const CourseTemplate = ({ data }) => {
+  //console.log(data);
   const { markdownRemark, allMarkdownRemark } = data;
   const course = courseMarkdownRemark(markdownRemark);
   const allCourses = allMarkdownRemark.edges.map((edge) =>
@@ -20,6 +22,8 @@ export default CourseTemplate = () => {
   );
   return <CoursePage course={course} otherCourses={allCourses} />;
 };
+
+export default CourseTemplate;
 
 export const pageQuery = graphql`
   query CourseByPath($path: String!, $type: String!) {
@@ -33,6 +37,8 @@ export const pageQuery = graphql`
         description
         outcomes
         slug
+        videoUrl
+        shortDescription
         image {
           childImageSharp {
             gatsbyImageData(
@@ -62,6 +68,7 @@ export const pageQuery = graphql`
             title
             timeline
             description
+            shortDescription
             outcomes
             slug
             image {
