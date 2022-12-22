@@ -26,6 +26,7 @@ const Carousel = ({ items }) => {
       let slideWidth = slideRef.current ? slideRef.current.clientWidth : 1300;
       if (activeSlide > sliderSize - 1) {
         slideWidth = sliderSize * slideWidth;
+        if (containerRef.current === undefined) return;
         containerRef.current.style.display = 'none';
         containerRef.current.scrollLeft -= slideWidth;
         containerRef.current.style.display = 'block';
