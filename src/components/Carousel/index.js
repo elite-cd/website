@@ -59,13 +59,13 @@ const Carousel = ({ items }) => {
                 image={getImage(item.image)}
               />
               <div className={style.overlay}>
-                <p className={style.title}>
+                <h3 className={style.title}>
                   {intl.formatMessage({ id: item.title })}
                   <br />
                   <span className={style.subtitle}>
                     {intl.formatMessage({ id: item.subtitle })}
                   </span>
-                </p>
+                </h3>
                 <ButtonRounded
                   url={item.buttonUrl}
                   rightIcon={faCircleChevronRight}

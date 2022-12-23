@@ -9,8 +9,16 @@ body {
   overflow-x: hidden;
 }
 
-* {
+p,
+h6 {
   line-height: 1rem !important;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.8rem !important;
 }
 
 a {
