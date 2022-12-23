@@ -6,6 +6,7 @@ import * as React from 'react';
 import ButtonRounded from '../Button/button-rounded';
 import * as style from './Carousel.module.scss';
 const Carousel = ({ items }) => {
+  console.log(items);
   const intl = useIntl();
   const sliderSize = items.length;
   let containerRef = React.useRef(null);
@@ -26,7 +27,8 @@ const Carousel = ({ items }) => {
       let slideWidth = slideRef.current ? slideRef.current.clientWidth : 1300;
       if (activeSlide > sliderSize - 1) {
         slideWidth = sliderSize * slideWidth;
-        if (containerRef.current === undefined) return;
+        if (containerRef.current === undefined || containerRef.current === null)
+          return;
         containerRef.current.style.display = 'none';
         containerRef.current.scrollLeft -= slideWidth;
         containerRef.current.style.display = 'block';
@@ -37,8 +39,11 @@ const Carousel = ({ items }) => {
         containerRef.current
           ? (containerRef.current.style.display = 'flex')
           : null;
+        containerRef.current
+          ? (containerRef.current.scrollLeft += slideWidth)
+          : null;
       }
-      containerRef.current.scrollLeft += slideWidth;
+
       activeSlide += 1;
     }, 2000);
   };
