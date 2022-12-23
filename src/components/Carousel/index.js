@@ -26,6 +26,7 @@ const Carousel = ({ items }) => {
       let slideWidth = slideRef.current ? slideRef.current.clientWidth : 1300;
       if (activeSlide > sliderSize - 1) {
         slideWidth = sliderSize * slideWidth;
+        if (containerRef.current === undefined) return;
         containerRef.current.style.display = 'none';
         containerRef.current.scrollLeft -= slideWidth;
         containerRef.current.style.display = 'block';
@@ -58,13 +59,13 @@ const Carousel = ({ items }) => {
                 image={getImage(item.image)}
               />
               <div className={style.overlay}>
-                <p className={style.title}>
+                <h3 className={style.title}>
                   {intl.formatMessage({ id: item.title })}
                   <br />
                   <span className={style.subtitle}>
                     {intl.formatMessage({ id: item.subtitle })}
                   </span>
-                </p>
+                </h3>
                 <ButtonRounded
                   url={item.buttonUrl}
                   rightIcon={faCircleChevronRight}
