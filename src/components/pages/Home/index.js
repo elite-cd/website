@@ -14,7 +14,7 @@ import * as style from './Home.module.scss';
 
 const Home = ({ carouselItems }) => {
   const intl = useIntl();
-  const renderHomePage = (courses) => {
+  const InternalPage = ({ courses }) => {
     return (
       <React.Fragment>
         <Carousel items={carouselItems} />
@@ -165,7 +165,7 @@ const Home = ({ carouselItems }) => {
   };
   return (
     <Page activeRoute={ROUTES.INDEX}>
-      {(courses) => renderHomePage(courses)}
+      {(courses) => <InternalPage courses={courses} />}
     </Page>
   );
 };
