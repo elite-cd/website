@@ -1,12 +1,13 @@
-import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { useIntl } from 'gatsby-plugin-intl';
-import T from 'prop-types';
-import * as React from 'react';
-import ButtonRounded from '../Button/button-rounded';
-import * as style from './Carousel.module.scss';
+import { faCircleChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { useIntl } from "gatsby-plugin-intl";
+import T from "prop-types";
+import * as React from "react";
+import useWindowDimensions from "../../tools/windows-dimensions";
+import ButtonRounded from "../Button/button-rounded";
+import * as style from "./Carousel.module.scss";
 const Carousel = ({ items }) => {
-  console.log(items);
+  const { width } = useWindowDimensions();
   const intl = useIntl();
   const sliderSize = items.length;
   let containerRef = React.useRef(null);
@@ -17,22 +18,21 @@ const Carousel = ({ items }) => {
   const updateActiveSlide = () => {
     if (intervalFunc) return;
     intervalFunc = setInterval(() => {
-      let slideWidth = slideRef.current ? slideRef.current.clientWidth : 1300;
+      let slideWidth = slideRef.current ? slideRef.current.clientWidth : width;
       if (activeSlide > sliderSize - 1) {
         slideWidth = sliderSize * slideWidth;
         if (containerRef.current === undefined || containerRef.current === null)
           return;
-        containerRef.current.style.display = 'none';
+
+        containerRef.current.style.display = "none";
         containerRef.current.scrollLeft -= slideWidth;
-        containerRef.current.style.display = 'block';
+        containerRef.current.style.display = "block";
         activeSlide = 0;
         return;
-      }
-      if (activeSlide === 0 && containerRef.current) {
-        containerRef.current.style.display = 'flex';
+      } else if (activeSlide === 0 && containerRef.current) {
+        containerRef.current.style.display = "flex";
         containerRef.current.scrollLeft += slideWidth;
       }
-
       activeSlide += 1;
     }, 2000);
   };
@@ -45,15 +45,15 @@ const Carousel = ({ items }) => {
   }, [intervalFunc]);
 
   return (
-    <section className={style['slider__wrapper']}>
-      <ul ref={containerRef} className={style['slides__container']}>
+    <section className={style["slider__wrapper"]}>
+      <ul ref={containerRef} className={style["slides__container"]}>
         {items.map((item, i) => (
-          <li ref={slideRef} key={`value-${i}`} className={style['slide']}>
+          <li ref={slideRef} key={`value-${i}`} className={style["slide"]}>
             <div className={style.item}>
               <GatsbyImage
                 fluid={item.image.childImageSharp.fluid}
                 alt={`carousel-${i}`}
-                objectFit={'cover'}
+                objectFit={"cover"}
                 className={style.background}
                 image={getImage(item.image)}
               />
@@ -68,7 +68,7 @@ const Carousel = ({ items }) => {
                 <ButtonRounded
                   url={item.buttonUrl}
                   rightIcon={faCircleChevronRight}
-                  text={'Démarrez votre formation'}
+                  text={"Démarrez votre formation"}
                 />
                 <p className={style.desc}>
                   {intl.formatMessage({ id: item.desc })}

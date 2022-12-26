@@ -1,11 +1,11 @@
-import { useIntl } from 'gatsby-plugin-intl';
-import T from 'prop-types';
-import * as React from 'react';
-import { ROUTES } from '../../common/constants';
-import Logo from '../Logo';
-import DropdownItem from './DropdownItem';
-import * as style from './Menu.module.scss';
-import MenuItem from './MenuItem';
+import { useIntl } from "gatsby-plugin-intl";
+import T from "prop-types";
+import * as React from "react";
+import { ROUTES } from "../../common/constants";
+import Logo from "../Logo";
+import DropdownItem from "./DropdownItem";
+import * as style from "./Menu.module.scss";
+import MenuItem from "./MenuItem";
 
 const Menu = ({ activeRoute, courses }) => {
   const intl = useIntl();
@@ -18,7 +18,7 @@ const Menu = ({ activeRoute, courses }) => {
     <div className={style.container}>
       <nav className={style.navbar}>
         <Logo className={style.logo} />
-        <ul className={style['navlinks']}>
+        <ul className={style["navlinks"]}>
           <input
             className={style.checkbox}
             type="checkbox"
@@ -33,29 +33,25 @@ const Menu = ({ activeRoute, courses }) => {
             <MenuItem
               isActive={activeRoute ? ROUTES.INDEX === activeRoute : true}
               url={ROUTES.INDEX}
-              text={intl.formatMessage({ id: 'menu-item.label.home' })}
+              text={intl.formatMessage({ id: "menu-item.label.home" })}
             />
             <DropdownItem
               isActive={ROUTES.ACADEMY === activeRoute}
-              url={'#'}
-              text={intl.formatMessage({ id: 'menu-item.label.academy' })}
+              url={"#"}
+              text={intl.formatMessage({ id: "menu-item.label.academy" })}
               links={ACADEMY_COURSES}
             />
             <MenuItem
               url={ROUTES.BLANK}
-              text={intl.formatMessage({ id: 'menu-item.label.magasine' })}
+              text={intl.formatMessage({ id: "menu-item.label.magasine" })}
             />
             <MenuItem
               url={ROUTES.BLANK}
-              text={intl.formatMessage({ id: 'menu-item.label.partners' })}
-            />
-            <MenuItem
-              url={ROUTES.BLANK}
-              text={intl.formatMessage({ id: 'menu-item.label.about' })}
+              text={intl.formatMessage({ id: "menu-item.label.about" })}
             />
             <MenuItem
               url={ROUTES.CONTACT}
-              text={intl.formatMessage({ id: 'menu-item.label.contacts' })}
+              text={intl.formatMessage({ id: "menu-item.label.contacts" })}
             />
           </div>
         </ul>

@@ -4,6 +4,9 @@
   display: grid;
   column-gap: 1.5rem;
   grid-template-columns: repeat(4, 1fr);
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
   border-radius: 2rem 2rem 0rem 0rem;
   bottom: 0;
   color: #fff;
@@ -15,7 +18,7 @@
   font-style: oblique;
 }
 
-.footer__certification{
+.footer__certification {
   font-size: 18px;
 }
 
@@ -32,13 +35,13 @@
 .footer__elite ul {
   padding: 0;
   font-size: 12px;
-  font-family: 'GothamLight';
+  font-family: "GothamLight";
 }
 .footer__desc {
   font-size: 12px;
   text-align: left;
   word-spacing: 3px;
-  font-family: 'GothamLight';
+  font-family: "GothamLight";
 }
 
 .footer__section {
@@ -47,11 +50,11 @@
 }
 
 .footer__contact p {
-  font-family: 'GothamLight';
+  font-family: "GothamLight";
 }
 
 .footer__contact__text {
-  font-family: 'GothamMedium';
+  font-family: "GothamMedium";
 }
 
 .logo_app {
