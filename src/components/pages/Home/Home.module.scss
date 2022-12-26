@@ -15,6 +15,18 @@
   width: 100%;
   padding: 0 2rem;
   font-family: "GothamMedium", "Inter", sans-serif;
+  @media only screen and (max-width: 768px) {
+    padding: 0;
+    .typography3 {
+      text-align: center;
+    }
+
+    .typography6 {
+      font-size: 18px;
+      font-family: "GothamLight";
+      line-height: 1.5rem !important;
+    }
+  }
 }
 
 .typography3 {
