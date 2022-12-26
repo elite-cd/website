@@ -1,16 +1,17 @@
-import * as React from 'react';
-import ButtonPrimary from '../../Button/button-primary';
-import Page from '../../PageTemplate';
-import TextArea from '../../TextArea';
-import TextInput from '../../TextInput';
-import * as style from './Contact.module.scss';
+import * as React from "react";
+import { ROUTES } from "../../../common/constants";
+import ButtonPrimary from "../../Button/button-primary";
+import Page from "../../PageTemplate";
+import TextArea from "../../TextArea";
+import TextInput from "../../TextInput";
+import * as style from "./Contact.module.scss";
 const Contact = () => {
   const renderContactForm = () => {
     return (
       <div className={style.container}>
-        <p className={style.navigation}>{'Accueil > Contact >'}</p>
+        <p className={style.navigation}>{"Accueil > Contact >"}</p>
         <h3 className={style.title}>Contact</h3>
-        <div className={style['page__header']}>
+        <div className={style["page__header"]}>
           <h3 className={style.title}>Contact</h3>
           <p className={style.subtitle}>
             Débutez votre cursus de formation avec Elite !
@@ -19,39 +20,39 @@ const Contact = () => {
 
         <form id="contactform" className={style.form}>
           <TextInput
-            label={'Prénom'}
+            label={"Prénom"}
             required
-            placeholder={'Entrer votre prénom'}
-            name={'prenom'}
+            placeholder={"Entrer votre prénom"}
+            name={"prenom"}
           />
           <TextInput
-            label={'Nom'}
+            label={"Nom"}
             required
-            placeholder={'Entrer votre nom'}
-            name={'nom'}
+            placeholder={"Entrer votre nom"}
+            name={"nom"}
           />
           <TextInput
-            label={'Email'}
+            label={"Email"}
             required
-            type={'email'}
-            placeholder={'Entrer votre email'}
-            name={'profession'}
+            type={"email"}
+            placeholder={"Entrer votre email"}
+            name={"profession"}
           />
           <TextArea
-            label={'Message'}
+            label={"Message"}
             required
-            placeholder={'Dites nous tout!'}
-            name={'message'}
+            placeholder={"Dites nous tout!"}
+            name={"message"}
           />
 
-          <div className={style['button__section']}>
-            <ButtonPrimary text={'ENVOYER'} />
+          <div className={style["button__section"]}>
+            <ButtonPrimary text={"ENVOYER"} />
           </div>
         </form>
       </div>
     );
   };
-  return <Page>{renderContactForm}</Page>;
+  return <Page activeRoute={ROUTES.CONTACT}>{renderContactForm}</Page>;
 };
 
 export default Contact;
