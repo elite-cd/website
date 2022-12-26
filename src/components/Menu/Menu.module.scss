@@ -37,11 +37,20 @@
   font-size: 14px;
 }
 
-.active {
+.active,
+.menugroup__active {
   background-color: #046059;
-  color: #fff;
+  color: #fff !important;
   border-radius: 0;
   transition: 0.3s ease;
+}
+
+.menugroup__active a {
+  color: #FFF !important;
+}
+
+.menugroup__active{
+  position: relative;
 }
 
 .menu li:hover {
@@ -87,6 +96,13 @@
 
 .menugroup:hover .dropdown {
   display: block;
+}
+
+.menugroup__active:hover .dropdown {
+  display: block;
+  a {
+    color: #000 !important;
+  }
 }
 
 .checkbox {

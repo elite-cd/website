@@ -31,12 +31,12 @@ const Menu = ({ activeRoute, courses }) => {
 
           <div className={style.menu}>
             <MenuItem
-              isActive={activeRoute ? ROUTES.INDEX == activeRoute : true}
+              isActive={activeRoute ? ROUTES.INDEX === activeRoute : true}
               url={ROUTES.INDEX}
               text={intl.formatMessage({ id: 'menu-item.label.home' })}
             />
             <DropdownItem
-              isActive={activeRoute ? ROUTES.ACADEMY == activeRoute : false}
+              isActive={ROUTES.ACADEMY === activeRoute}
               url={'#'}
               text={intl.formatMessage({ id: 'menu-item.label.academy' })}
               links={ACADEMY_COURSES}

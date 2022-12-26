@@ -35,7 +35,7 @@ const Home = ({ carouselItems }) => {
               <CourseItem
                 key={'course-' + i}
                 title={course.title}
-                outlined={i % 2 == 0}
+                outlined={i % 2 === 0}
                 timeline={course.timeline}
                 descTitle={course.shortDescription}
                 outcomes={course.outcomes.split(',')}

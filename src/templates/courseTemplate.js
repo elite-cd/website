@@ -1,6 +1,7 @@
-import { graphql } from 'gatsby';
-import React from 'react';
-import CoursePage from '../components/pages/CoursePage';
+import { graphql } from "gatsby";
+import React from "react";
+import CoursePage from "../components/pages/CoursePage";
+import NotFoundPage from "../pages/404";
 
 const courseMarkdownRemark = ({ frontmatter }) => ({
   title: frontmatter.title,
@@ -16,11 +17,14 @@ const courseMarkdownRemark = ({ frontmatter }) => ({
 const CourseTemplate = ({ data }) => {
   //console.log(data);
   const { markdownRemark, allMarkdownRemark } = data;
-  const course = courseMarkdownRemark(markdownRemark);
-  const allCourses = allMarkdownRemark.edges.map((edge) =>
-    courseMarkdownRemark(edge.node)
-  );
-  return <CoursePage course={course} otherCourses={allCourses} />;
+  if (allMarkdownRemark && markdownRemark) {
+    const course = courseMarkdownRemark(markdownRemark);
+    const allCourses = allMarkdownRemark.edges.map((edge) =>
+      courseMarkdownRemark(edge.node)
+    );
+    return <CoursePage course={course} otherCourses={allCourses} />;
+  }
+  return <NotFoundPage />  
 };
 
 export default CourseTemplate;

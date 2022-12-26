@@ -91,7 +91,7 @@ const CoursePage = ({ course, otherCourses }) => {
       </div>
     </React.Fragment>
   );
-  return <Page>{renderCoursePage}</Page>;
+  return <Page activeRoute={ROUTES.ACADEMY} >{renderCoursePage}</Page>;
 };
 
 export default CoursePage;

@@ -38,7 +38,7 @@ const Page = ({ children, activeRoute }) => {
         return (
           <div className={style.page}>
             <Menu courses={courses} activeRoute={activeRoute} />
-            {children(courses)}
+            {typeof children === 'function' ? children(courses): children}
             <Footer />
           </div>
         );

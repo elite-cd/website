@@ -5,7 +5,7 @@ import * as style from '../Menu.module.scss';
 
 const DropdownItem = ({ isActive, text, links, url }) => {
   return (
-    <li className={style.menugroup}>
+    <li className={isActive ?  style.menugroup__active : style.menugroup}>
       <Link to={url}>{text}</Link>
       <ul className={style.dropdown}>
         {links &&

@@ -14,13 +14,6 @@ const Carousel = ({ items }) => {
   let intervalFunc = null;
   let activeSlide = 0;
 
-  React.useEffect(() => {
-    if (containerRef.current) {
-      updateActiveSlide();
-    }
-    return () => clearInterval(intervalFunc);
-  }, []);
-
   const updateActiveSlide = () => {
     if (intervalFunc) return;
     intervalFunc = setInterval(() => {
@@ -35,20 +28,21 @@ const Carousel = ({ items }) => {
         activeSlide = 0;
         return;
       }
-      if (activeSlide == 0) {
-        containerRef.current
-          ? (containerRef.current.style.display = 'flex')
-          : null;
-        containerRef.current
-          ? (containerRef.current.scrollLeft += slideWidth)
-          : null;
+      if (activeSlide === 0 && containerRef.current) {
+        containerRef.current.style.display = 'flex';
+        containerRef.current.scrollLeft += slideWidth;
       }
 
       activeSlide += 1;
     }, 2000);
   };
 
-  updateActiveSlide();
+  React.useEffect(() => {
+    if (containerRef.current) {
+      updateActiveSlide();
+    }
+    return () => clearInterval(intervalFunc);
+  }, [intervalFunc]);
 
   return (
     <section className={style['slider__wrapper']}>
