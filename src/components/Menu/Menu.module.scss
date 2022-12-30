@@ -144,8 +144,13 @@
 
   .active,
   .menugroup__active {
+    background-color: #fff;
     color: #046059 !important;
-    text-align: left;
+    border-radius: 0;
+    transition: 0.3s ease;
+    a {
+      font-family: "GothamMedium";
+    }
   }
 
   .menu li {
@@ -167,15 +172,8 @@
     text-align: left;
   }
 
-  .menugroup:hover .dropdown {
+  .checkbox:checked ~ .menu {
     display: block;
-  }
-
-  .menugroup__active:hover .dropdown {
-    display: block;
-    a {
-      color: #000 !important;
-    }
   }
 
   .hamburger {

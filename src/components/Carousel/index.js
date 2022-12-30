@@ -18,6 +18,8 @@ const Carousel = ({ items }) => {
     speed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
+    nextArrow: null,
+    prevArrow: null,
     className: style["slides__container"],
   };
 

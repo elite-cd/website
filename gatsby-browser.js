@@ -1,4 +1,5 @@
 exports.onClientEntry = () => {
+  if (process.env.NODE_ENV === "development") return;
   if (
     process.env.MAINTENANCE_MODE === "true" &&
     !window.location.pathname.includes("/maintenance")
@@ -8,6 +9,7 @@ exports.onClientEntry = () => {
 };
 
 exports.onRouteUpdate = ({ location, prevLocation }) => {
+  if (process.env.NODE_ENV === "development") return;
   if (
     process.env.MAINTENANCE_MODE === "true" &&
     !location.pathname.includes("/maintenance")
