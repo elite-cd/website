@@ -25,7 +25,7 @@ const MantenancePage = () => {
           alt={"logo"}
           src={MaintenanceGif}
         />
-        <p className={style.paragraph}>© elite.cd 2020</p>
+        <p className={style.paragraph}>© elite.cd 2022</p>
       </div>
     </main>
   );
