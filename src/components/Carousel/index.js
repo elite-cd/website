@@ -1,69 +1,61 @@
 import { faCircleChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 import { useIntl } from "gatsby-plugin-intl";
 import T from "prop-types";
 import * as React from "react";
-import useWindowDimensions from "../../tools/windows-dimensions";
 import ButtonRounded from "../Button/button-rounded";
 import * as style from "./Carousel.module.scss";
+import Slider from "react-slick";
 const Carousel = ({ items }) => {
-  const { width } = useWindowDimensions();
   const intl = useIntl();
-  const sliderSize = items.length;
-  let containerRef = React.useRef(null);
+
   let slideRef = React.useRef(null);
-  let intervalFunc = null;
-  let activeSlide = 0;
 
-  const updateActiveSlide = () => {
-    if (intervalFunc) return;
-    intervalFunc = setInterval(() => {
-      let slideWidth = slideRef.current ? slideRef.current.clientWidth : width;
-      if (activeSlide > sliderSize - 1) {
-        slideWidth = sliderSize * slideWidth;
-        if (containerRef.current === undefined || containerRef.current === null)
-          return;
-
-        containerRef.current.style.display = "none";
-        containerRef.current.scrollLeft -= slideWidth;
-        containerRef.current.style.display = "block";
-        activeSlide = 0;
-        return;
-      } else if (activeSlide === 0 && containerRef.current) {
-        containerRef.current.style.display = "flex";
-        containerRef.current.scrollLeft += slideWidth;
-      }
-      activeSlide += 1;
-    }, 2000);
+  const settings = {
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    speed: 2000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    className: style["slides__container"],
   };
 
-  React.useEffect(() => {
-    if (containerRef.current) {
-      updateActiveSlide();
-    }
-    return () => clearInterval(intervalFunc);
-  }, [intervalFunc]);
-
   return (
-    <section className={style["slider__wrapper"]}>
-      <ul ref={containerRef} className={style["slides__container"]}>
+    <section>
+      <Slider {...settings}>
         {items.map((item, i) => (
-          <li ref={slideRef} key={`value-${i}`} className={style["slide"]}>
+          <div ref={slideRef} key={`value-${i}`} className={style["slide"]}>
             <div className={style.item}>
               <GatsbyImage
                 fluid={item.image.childImageSharp.fluid}
                 alt={`carousel-${i}`}
                 objectFit={"cover"}
-                className={style.background}
+                className={style.bg}
                 image={getImage(item.image)}
+              />
+              <StaticImage
+                alt="bg"
+                className={style.bg_xs}
+                objectFit={"fill"}
+                src="../../assets/images/bg_mobile.png"
               />
               <div className={style.overlay}>
                 <h3 className={style.title}>
                   {intl.formatMessage({ id: item.title })}
-                  <br />
-                  <span className={style.subtitle}>
+                </h3>
+                <div className={style.subtitleContainer}>
+                  <p className={style.subtitle}>
                     {intl.formatMessage({ id: item.subtitle })}
-                  </span>
+                  </p>
+                </div>
+                <p className={style.desc_xs}>
+                  {intl.formatMessage({ id: item.desc })}
+                </p>
+                <h3 className={style.count_xs}>
+                  +{item.students}
+                  <br />
+                  <span className={style.count__title}>apprenants</span>
                 </h3>
                 <ButtonRounded
                   url={item.buttonUrl}
@@ -80,9 +72,9 @@ const Carousel = ({ items }) => {
                 </h3>
               </div>
             </div>
-          </li>
+          </div>
         ))}
-      </ul>
+      </Slider>
     </section>
   );
 };

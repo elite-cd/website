@@ -1,0 +1,30 @@
+.container {
+  background-color: #046059;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  padding: 4rem 0;
+}
+
+.content {
+  text-align: center;
+}
+
+.heading {
+  font-family: "GothamMedium";
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.paragraph {
+  font-family: "GothamRegular";
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.maintenance_logo {
+  width: 10rem;
+}
