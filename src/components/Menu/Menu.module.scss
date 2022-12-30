@@ -142,12 +142,6 @@
     padding: 16px 0;
   }
 
-  .active,
-  .menugroup__active {
-    color: #046059 !important;
-    text-align: left;
-  }
-
   .menu li {
     text-align: left;
   }
@@ -165,17 +159,6 @@
   .menu li + li {
     border-top: 1px solid #046059;
     text-align: left;
-  }
-
-  .menugroup:hover .dropdown {
-    display: block;
-  }
-
-  .menugroup__active:hover .dropdown {
-    display: block;
-    a {
-      color: #000 !important;
-    }
   }
 
   .hamburger {

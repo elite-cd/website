@@ -31,6 +31,7 @@
 
 .typography3 {
   font-size: 30px;
+  line-height: 2rem !important;
 }
 
 .typography6 {
@@ -52,6 +53,9 @@
 .course__section {
   background-color: #fbf9ff;
   padding: 4rem 0;
+  @media only screen and (max-width: 768px) {
+    padding: 0;
+  }
 }
 
 .courselist {
@@ -215,6 +219,9 @@
   margin: auto;
   padding: 4rem 0;
   background-color: #fff;
+  @media only screen and (max-width: 768px) {
+    padding-bottom: 1rem;
+  }
 }
 
 .help__main__desc {
@@ -228,6 +235,7 @@
 .help__main__title {
   margin: 0;
   font-size: 1.5rem;
+  text-align: center;
 }
 
 .help__main__space {
@@ -240,6 +248,10 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    row-gap: 0.3rem;
+  }
 }
 
 .help__main__input {

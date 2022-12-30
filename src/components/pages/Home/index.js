@@ -21,9 +21,6 @@ const Home = ({ carouselItems }) => {
         <div className={style.row__center}>
           <h3 className={style.typography3}>
             {intl.formatMessage({ id: "content.homepage.elite.title" })}
-            <span className={style.sitename}>
-              {intl.formatMessage({ id: "sitename" })}
-            </span>
           </h3>
           <p className={style.typography6}>
             {intl.formatMessage({ id: "content.homepage.elite.decription" })}
