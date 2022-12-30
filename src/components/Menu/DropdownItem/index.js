@@ -1,17 +1,22 @@
-import { Link } from 'gatsby';
-import T from 'prop-types';
-import * as React from 'react';
-import * as style from '../Menu.module.scss';
+import { Link } from "gatsby";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import T from "prop-types";
+import * as React from "react";
+import * as style from "../Menu.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const DropdownItem = ({ isActive, text, links, url }) => {
   return (
-    <li className={isActive ?  style.menugroup__active : style.menugroup}>
-      <Link to={url}>{text}</Link>
+    <li className={isActive ? style.menugroup__active : style.menugroup}>
+      <Link to={url}>
+        {text}
+        <FontAwesomeIcon className={style.menu__icon} icon={faChevronDown} />
+      </Link>
       <ul className={style.dropdown}>
         {links &&
           links.map((link, i) => {
             return (
-              <li key={'link-' + i}>
+              <li key={"link-" + i}>
                 <Link to={link.url}>{link.text}</Link>
               </li>
             );

@@ -5,13 +5,16 @@
 }
 
 .slides__container {
-  height: 90vh;
+  height: fit-content;
   width: 100%;
   display: flex;
   scroll-behavior: smooth;
   list-style: none;
   margin: 0;
   padding: 0;
+  @media (max-width: 768px) {
+    height: fit-content;
+  }
 }
 
 .slide {
@@ -27,9 +30,19 @@
   height: fit-content;
 }
 
-.background {
-  width: 100%;
-  height: 90vh;
+.bg {
+  height: 100vh;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.bg_xs {
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+    height: 50vh;
+  }
 }
 
 .item .overlay {
@@ -46,6 +59,7 @@
 
 .title {
   color: #fff;
+  line-height: 2rem !important;
   font-weight: bold;
   font-size: 2.1rem;
   font-family: "GothamMedium", sans-serif;
@@ -53,24 +67,44 @@
   margin: 0 0 0.8rem 0;
 }
 
-.subtitle {
-  font-size: 0.6rem;
-  font-weight: 300;
-  padding: 0.6rem 0.2rem;
+.subtitleContainer {
   background-color: #fff;
+  margin: 1rem 0;
+  width: fit-content;
+  padding: 0 0.3rem 0 0;
+  @media (max-width: 768px) {
+    margin: 1rem 4rem 0.5rem 0;
+  }
+}
+
+.subtitle {
+  font-size: 0.7rem;
+  font-weight: 300;
+  font-family: "GothamLight" !important;
   color: #000;
+  margin: 0;
+  width: fit-content;
 }
 
 .desc {
-  font-size: 12px;
+  font-size: 0.8rem;
   color: #fff;
-  font-family: "GothamLight";
-  width: 80%;
+  font-family: "GothamRegular";
+  width: 90%;
 }
 
 .count {
   font-family: "GothamMedium";
   font-size: 2.1rem;
+  color: #fff;
+}
+
+.desc_xs {
+  display: none;
+}
+
+.count_xs {
+  display: none;
 }
 
 .count__title {
@@ -94,6 +128,24 @@
     width: 100%;
   }
 
+  .count {
+    font-family: "GothamMedium";
+    font-size: 2.1rem;
+    display: none;
+  }
+
+  .count_xs {
+    display: block;
+    font-family: "GothamMedium";
+    font-size: 2.1rem;
+    margin: 1rem 0;
+    color: #fff;
+  }
+
+  .count__title {
+    font-size: 1rem;
+  }
+
   .subtitle {
     margin-right: 2rem;
   }
@@ -103,7 +155,20 @@
   }
 
   .title {
-    font-size: 18px;
+    font-size: 1.4rem;
+    width: 90%;
+    font-family: "GothamMedium";
+    margin: 0;
+  }
+
+  .desc_xs {
+    display: block;
+    font-size: 0.7rem;
+    line-height: 0.8rem !important;
+    width: 90%;
+    font-family: "GothamRegular";
+    margin: 0 0 0.5rem 0;
+    color: #fff;
   }
 
   .desc {

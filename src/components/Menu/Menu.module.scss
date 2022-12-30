@@ -1,12 +1,23 @@
 .container {
   height: 3.5rem;
-  font-family: 'GothamLight', sans-serif;
+  font-family: "GothamLight", sans-serif;
   box-shadow: 0 0 0.3rem 0 rgb(0 0 0 / 35%);
   width: 100%;
+  @media (max-width: 798px) {
+    height: fit-content;
+  }
 }
 
 .logo {
   height: 2rem;
+  @media (max-width: 798px) {
+    height: 1.7rem;
+    margin-left: -0.7rem;
+  }
+}
+
+.menu__icon {
+  margin-left: 0.5rem;
 }
 
 /* NAVBAR STYLING STARTS */
@@ -15,8 +26,7 @@
   display: flex;
   align-items: center;
   justify-content: first baseline;
-  padding-left: 1.2rem;
-  padding-right: 1.2rem;
+  padding-left: 0 1.2rem;
   width: 90%;
   margin: auto;
 }
@@ -35,6 +45,7 @@
   display: flex;
   gap: 0.1em;
   font-size: 14px;
+  z-index: 2;
 }
 
 .active,
@@ -46,10 +57,10 @@
 }
 
 .menugroup__active a {
-  color: #FFF !important;
+  color: #fff !important;
 }
 
-.menugroup__active{
+.menugroup__active {
   position: relative;
 }
 
@@ -113,7 +124,8 @@
 
 .hamburger {
   display: none;
-  font-size: 24px;
+  font-size: 1.7rem;
+  padding-top: 0.5rem;
   user-select: none;
 }
 
@@ -123,11 +135,25 @@
   .menu {
     display: none;
     position: absolute;
-    background-color: teal;
+    background-color: #fff;
     right: 0;
     left: 0;
     text-align: center;
     padding: 16px 0;
+  }
+
+  .active,
+  .menugroup__active {
+    color: #046059 !important;
+    text-align: left;
+  }
+
+  .menu li {
+    text-align: left;
+  }
+
+  .menu li:last-child {
+    margin-bottom: 1px solid #046059;
   }
 
   .menu li:hover {
@@ -137,11 +163,19 @@
   }
 
   .menu li + li {
-    margin-top: 12px;
+    border-top: 1px solid #046059;
+    text-align: left;
   }
 
-  .checkbox:checked ~ .menu {
+  .menugroup:hover .dropdown {
     display: block;
+  }
+
+  .menugroup__active:hover .dropdown {
+    display: block;
+    a {
+      color: #000 !important;
+    }
   }
 
   .hamburger {
@@ -162,10 +196,9 @@
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
-    align-items: center;
     justify-content: flex-end;
-    width: 90%;
-    margin: auto;
+    margin: 0;
+    padding: 0.5rem;
   }
   .navlinks {
     margin: 0;
