@@ -13,7 +13,7 @@ const MantenancePage = () => {
       <h1 className={style.heading}>Site en maintenance</h1>
       <div className={style.content}>
         <p className={style.paragraph}>
-          Désolé le site en maintenance pour le moment, nous revenons très vite
+          Désolé le site en construction pour le moment, revenez plus tard
         </p>
       </div>
     </main>
