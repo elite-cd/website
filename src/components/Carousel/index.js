@@ -10,11 +10,12 @@ const Carousel = ({ items }) => {
   const intl = useIntl();
 
   let slideRef = React.useRef(null);
+  const mItem = [items[0]];
 
   const settings = {
     dots: false,
     infinite: true,
-    autoplay: true,
+    autoplay: false,
     speed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -26,7 +27,7 @@ const Carousel = ({ items }) => {
   return (
     <section>
       <Slider {...settings}>
-        {items.map((item, i) => (
+        {mItem.map((item, i) => (
           <div ref={slideRef} key={`value-${i}`} className={style["slide"]}>
             <div className={style.item}>
               <GatsbyImage

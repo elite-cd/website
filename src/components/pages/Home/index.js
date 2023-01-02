@@ -35,102 +35,90 @@ const Home = ({ carouselItems }) => {
                 outlined={i % 2 === 0}
                 timeline={course.timeline}
                 descTitle={course.shortDescription}
-                outcomes={course.outcomes.split(",")}
+                outcomes={course.outcomes}
                 image={course.image}
               />
             ))}
           </div>
         </section>
-        <section className={style["mag__section"]}>
-          <div className={style.container__md}>
-            <h3 className={style["mag__title"]}>Découvrez nos actualités</h3>
-
-            <div className={style["articlelist"]}>
-              <div className={style["articlemain"]}>
-                <StaticImage
-                  alt={"article"}
-                  className={style.articlemain__image}
-                  src={"../../../assets/images/magazine-article.png"}
-                />
-                <h3 className={style["articlemain__title"]}>
-                  L’innovation au coeur de nos activités
-                </h3>
-                <p className={style["articlemain__desc"]}>
-                  Convallis non proin ac bibendum. At pharetra sed ultrices
-                  semper. Lectus et ornare ultrices urna in. Id non fringilla
-                  dignissim ac risus amet eget egestas vestibulum. Aliquet etiam
-                  eget nulla nulla odio vel.
-                </p>
-                <ButtonPrimary text={"En savoir plus"} />
-              </div>
-              <div className={style["articleaside"]}>
-                <div className={style.container__md}>
-                  <StaticImage
-                    alt={"aside"}
-                    className={style.articleaside__image}
-                    src={"../../../assets/images/aside01.png"}
-                  />
-                  <h3 className={style["articleaside__title"]}>TECH</h3>
-                  <span className={style["articleaside__tag"]}>TECH</span>
-                  <p className={style["articleaside__desc"]}>
-                    Black Friday 2022 : PC portable, smartphone, écouteurs
-                    Bluetooth à prix mini. Lectus et ornare ultrices urna in. Id
-                    non fringilla dignissim ac risus amet eget egestas
-                    vestibulum. Aliquet etiam eget nulla nulla odio vel.
+        <h3 className={style.about__header}>
+          Pourquoi choisir l'académie des élites ?
+        </h3>
+        <section className={style.about__container}>
+          <div className={style.about__box}>
+            <StaticImage
+              alt="mentor"
+              objectFit="contain"
+              className={style.about__image}
+              src={"../../../assets/images/mentor.png"}
+            />
+            <p className={style.about__title}>
+              Mentors de niveau international
+            </p>
+            <div className={style.about__overlay}>
+              <div className={style.about__popup}>
+                <h2>Here i am</h2>
+                <a className={style.close} href="#">
+                  &times;
+                </a>
+                <div className={style.content}>
+                  <p className={style.about__desc}>
+                    Les programmes offerts sont soigneusement préparés par des
+                    mentors congolais qui ont bénéficié d’une éducation
+                    internationale au Canada et aux USA et évoluent dans des
+                    entreprises de renom dans le domaine de la technologie
+                    telles que Microsoft (USA) et Rhetorik (Canada)
                   </p>
-                  <p className={style["articleaside__date"]}>
-                    ACTUALITÉ • 24/11/2022
-                  </p>
-                  <ButtonPrimary text={"En savoir plus"} />
                 </div>
               </div>
             </div>
           </div>
-        </section>
-        <section className={style["about__section"]}>
-          <div className={style.container__md}>
-            <div className={style["grid"]}>
-              <div className={style["about__main"]}>
-                <h3 className={style["about__main__title"]}>
-                  A propos
-                  <br />
-                  <span>d&apos;Elite</span>
-                </h3>
-                <p className={style["about__main__desc"]}>
-                  Interiart is an award-winning architecture and interior design
-                  practice based in NYC. We work internationally on projects of
-                  residential & commercial interior design that require a
-                  creative approach. Our talented and experienced designers
-                  leverage their knowledge and expertise to create unique and
-                  comfortable interiors for you. Our team knows that interior
-                  design can be stressful for the client and we do our best to
-                  make it as easy as possible. We listen to your needs, ideas,
-                  and inputs. And most importantly, we make it exciting and
-                  enjoyable for our clients. <br /> <br /> Interiart is an
-                  award-winning architecture and interior design practice based
-                  in NYC. We work internationally on projects of residential &
-                  commercial interior design that require a creative approach.
-                  Our talented and our best to make it as easy as possible. We
-                  listen to your needs, ideas, and inputs. <br /> <br />
-                  And most importantly, we make it exciting and enjoyable for
-                  our clients. Interiart is an award-winning architecture and
-                  interior design practice based in NYC. We work internationally
-                  on projects of residential & commercial interior design that
-                  require a creative approach. Our talented and experienced
-                  designers leverage their knowledge and expertise to create
-                  unique and comfortable interiors for you. Our team knows that
-                  ideas, and inputs. And most importantly, we make it exciting
-                  and enjoyable for our clients.
-                </p>
-                <ButtonPrimary text={"En savoir plus"} />
-              </div>
-              <div className={style["about__aside"]}>
-                <StaticImage
-                  alt={"article"}
-                  src={"../../../assets/images/apropos-img.jpg"}
-                />
-              </div>
-            </div>
+          <div className={style.about__box}>
+            <StaticImage
+              alt="mentor"
+              objectFit="contain"
+              className={style.about__image}
+              src={"../../../assets/images/qualify.png"}
+            />
+            <p className={style.about__title}>Coach Qualifiés et pratiquants</p>
+          </div>
+          <div className={style.about__box}>
+            <StaticImage
+              alt="mentor"
+              objectFit="contain"
+              className={style.about__image}
+              src={"../../../assets/images/computer.png"}
+            />
+            <p className={style.about__title}>Lab Creative (Canada)</p>
+          </div>
+          <div className={style.about__box}>
+            <StaticImage
+              alt="mentor"
+              objectFit="contain"
+              className={style.about__image}
+              src={"../../../assets/images/pedagogie.png"}
+            />
+            <p className={style.about__title}>Methode Harkness (USA)</p>
+          </div>
+          <div className={style.about__box}>
+            <StaticImage
+              alt="mentor"
+              objectFit="contain"
+              className={style.about__image}
+              src={"../../../assets/images/professional.png"}
+            />
+            <p className={style.about__title}>
+              Environnement Professionnel et Sérieux
+            </p>
+          </div>
+          <div className={style.about__box}>
+            <StaticImage
+              alt="mentor"
+              objectFit="contain"
+              className={style.about__image}
+              src={"../../../assets/images/certificat.png"}
+            />
+            <p className={style.about__title}>Certificat</p>
           </div>
         </section>
         <section className={style["help__section"]}>

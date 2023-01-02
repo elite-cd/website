@@ -70,6 +70,7 @@
 .subtitleContainer {
   background-color: #fff;
   margin: 1rem 0;
+  display: none;
   width: fit-content;
   padding: 0 0.3rem 0 0;
   @media (max-width: 768px) {
@@ -96,6 +97,7 @@
 .count {
   font-family: "GothamMedium";
   font-size: 2.1rem;
+  display: none;
   color: #fff;
 }
 

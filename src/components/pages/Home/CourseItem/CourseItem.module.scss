@@ -4,9 +4,29 @@
   justify-content: center;
 }
 
+.text {
+  font-size: 0.8rem;
+  margin: 0;
+  &_bold {
+    @extend .text;
+    font-family: "GothamMedium";
+  }
+  &_regular {
+    @extend .text;
+    font-family: "GothamRegular";
+  }
+}
+
+.outcomes {
+  font-family: "GothamRegular";
+  font-size: 14px;
+  text-align: left;
+  line-height: 1.3rem !important;
+}
+
 .item,
 .item__outlined {
-  padding: 2rem;
+  padding: 1.6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,15 +111,18 @@
   justify-content: center;
 }
 
+.headertitle__outlined,
 .headertitle {
+  text-align: center;
   font-weight: bold;
-  margin: 0;
+  margin: 1rem 0;
+}
+
+.headertitle {
   color: #e9ab3e;
 }
 
 .headertitle__outlined {
-  font-weight: bold;
-  margin: 0;
   color: #046059;
 }
 
