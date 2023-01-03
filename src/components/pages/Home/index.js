@@ -58,9 +58,7 @@ const Home = ({ carouselItems }) => {
             <div className={style.about__overlay}>
               <div className={style.about__popup}>
                 <h2>Here i am</h2>
-                <a className={style.close} href="#">
-                  &times;
-                </a>
+                <a className={style.close}>&times;</a>
                 <div className={style.content}>
                   <p className={style.about__desc}>
                     Les programmes offerts sont soigneusement préparés par des
