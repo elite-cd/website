@@ -12,6 +12,7 @@ const courseMarkdownRemark = ({ frontmatter }) => ({
   slug: frontmatter.slug,
   image: frontmatter.image ? frontmatter.image.childImageSharp : null,
   path: frontmatter.path,
+  price: frontmatter.price,
 });
 
 const CourseTemplate = ({ data }) => {
@@ -24,7 +25,7 @@ const CourseTemplate = ({ data }) => {
     );
     return <CoursePage course={course} otherCourses={allCourses} />;
   }
-  return <NotFoundPage />  
+  return <NotFoundPage />;
 };
 
 export default CourseTemplate;
@@ -41,6 +42,7 @@ export const pageQuery = graphql`
         description
         outcomes
         slug
+        price
         videoUrl
         shortDescription
         image {
@@ -74,6 +76,7 @@ export const pageQuery = graphql`
             description
             shortDescription
             outcomes
+            price
             slug
             image {
               childImageSharp {

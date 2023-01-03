@@ -6,13 +6,16 @@ import * as style from "./CourseItem.module.scss";
 const CourseItem = ({
   title,
   timeline,
+  price,
   descTitle,
+  description,
+  slug,
   outcomes,
   outlined,
   image,
 }) => {
   const classNameVariation = outlined ? "__outlined" : "";
-  console.log(outcomes);
+
   return (
     <div className={style.wrapper}>
       <GatsbyImage
@@ -28,19 +31,29 @@ const CourseItem = ({
         </div>
         <div className={style.body}>
           <h3 className={style.bodytitle}>{descTitle}</h3>
-          <p className={style.outcomes}>{outcomes}</p>
+          <p className={style.outcomes}>{description}</p>
           <p className={style.text_bold}>
-            Durée: <span className={style.text_regular}>3 mois</span>
+            Durée: <span className={style.text_regular}>{timeline}</span>
           </p>
           <p className={style.text_bold}>
-            Prix: <span className={style.text_regular}>100$/mois</span>
+            Prix: <span className={style.text_regular}>{price}$/mois</span>
           </p>
         </div>
-        {outlined ? (
-          <ButtonLink className={"button__primary"} text={"En savoir plus"} />
-        ) : (
-          <ButtonLink className={"button__outlined"} text={"En savoir plus"} />
-        )}
+        <div className={style.btn_container}>
+          {outlined ? (
+            <ButtonLink
+              url={`/courses/${slug}`}
+              className={"button__primary"}
+              text={"En savoir plus"}
+            />
+          ) : (
+            <ButtonLink
+              url={`/courses/${slug}`}
+              className={"button__outlined"}
+              text={"En savoir plus"}
+            />
+          )}
+        </div>
       </div>
     </div>
   );

@@ -17,16 +17,24 @@
   }
 }
 
+.btn_container {
+  position: absolute;
+  bottom: 1rem;
+}
+
 .outcomes {
   font-family: "GothamRegular";
   font-size: 14px;
-  text-align: left;
+  text-align: center;
   line-height: 1.3rem !important;
 }
 
 .item,
 .item__outlined {
   padding: 1.6rem;
+  position: relative;
+  height: 27rem;
+  width: 18rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,6 +42,7 @@
   @media (max-width: 768px) {
     margin: 0;
     box-shadow: 0;
+    width: 20rem;
   }
 }
 
@@ -47,6 +56,7 @@
   height: 8rem;
   bottom: -2rem;
   align-self: center;
+  z-index: 2;
   @media (max-width: 768px) {
     display: none;
   }

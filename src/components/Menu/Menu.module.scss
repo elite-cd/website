@@ -1,6 +1,6 @@
 .container {
   height: 3.5rem;
-  font-family: "GothamLight", sans-serif;
+  font-family: "GothamRegular", sans-serif !important;
   box-shadow: 0 0 0.3rem 0 rgb(0 0 0 / 35%);
   width: 100%;
   @media (max-width: 798px) {
@@ -54,6 +54,7 @@
   color: #fff !important;
   border-radius: 0;
   transition: 0.3s ease;
+  font-family: "GothamMedium" !important;
 }
 
 .menugroup__active a {
@@ -149,7 +150,7 @@
     border-radius: 0;
     transition: 0.3s ease;
     a {
-      font-family: "GothamMedium";
+      font-family: "GothamMedium" !important;
     }
   }
 

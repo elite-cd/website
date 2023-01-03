@@ -87,11 +87,19 @@
     justify-content: center;
     flex-direction: row;
     column-gap: 2rem;
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 2rem;
+      column-gap: 0;
+      padding: 0;
+    }
   }
 
   &__desc {
     font-family: "GothamRegular";
-    font-size: 12px;
+    font-size: 14px;
   }
 
   &__overlay {
@@ -100,10 +108,11 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.1);
     transition: opacity 500ms;
-    visibility: hidden;
-    opacity: 0;
+    visibility: visible;
+    opacity: 1;
+    z-index: 2;
   }
 
   &__overlay:target {
@@ -119,10 +128,12 @@
     width: 30%;
     position: relative;
     transition: all 5s ease-in-out;
+    @media only screen and (max-width: 768px) {
+      width: 70%;
+    }
     .close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
+      position: relative;
+      margin: 0;
       transition: all 200ms;
       font-size: 30px;
       font-weight: bold;
@@ -153,7 +164,7 @@
   }
 
   &__box {
-    width: 8rem;
+    width: 15rem;
     padding: 2rem;
     display: flex;
     align-items: center;
@@ -162,6 +173,10 @@
     border-radius: 10px;
     overflow: hidden;
     background-color: #f1f1f1;
+    @media only screen and (max-width: 768px) {
+      width: 16rem;
+      height: 16rem;
+    }
   }
   &__image {
     width: 5rem;
@@ -176,7 +191,9 @@
     font-family: "GothamMedium";
     font-size: 2rem;
     text-align: center;
-    margin: 2rem 0;
+    line-height: 2rem !important;
+    width: 90%;
+    margin: 2rem auto;
     color: #046059;
   }
 }

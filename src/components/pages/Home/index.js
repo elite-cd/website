@@ -12,8 +12,44 @@ import Page from "../../PageTemplate";
 import CourseItem from "./CourseItem";
 import * as style from "./Home.module.scss";
 
+const OverlayContents = [
+  "Les programmes offerts sont soigneusement préparés par des mentors congolais qui ont bénéficié d’une éducation internationale au Canada et aux USA et évoluent dans des entreprises de renom dans le domaine de la technologie telles que Microsoft (USA) et Rhetorik (Canada)",
+  "Contrairement à l'enseignement traditionnel, nous disposons de coachs au détriment des enseignements. Ce modèle permet aux apprenants de développer une indépendance afin d'être orienté dans leur apprentissage. Ces coaches sont des professionnels de formation et de pratique dans le domaine de l’informatique.",
+  "Notre salle d’apprentissage est un véritable laboratoire de créativité,innovation, collaboration,productivité en groupe dans le but de favoriser l’autonomie et l’intelligence collective",
+  "Notre pédagogie se base sur l'échange des connaissances. Un système apprentissage autonome qui consiste à engager une discussion dans laquelle les apprenants participent et construisent le cours ensemble avec le coach (professeur) qui oriente les sujets",
+  "Nos programmes sont dispensés dans un local où se situe une entreprise de renom dans la technologie qui dispose des clients internationaux. Cet emplacement permet aux apprenants de s’adapter au milieu professionnel et aussi d'avoir des connaissances en plus de ce qu’ils apprendront.",
+  "A la fin de votre formation, vous aurez un certificat reconnu oú que vous alliez qui atteste vos compétences et connaissances.",
+];
+
 const Home = ({ carouselItems }) => {
   const intl = useIntl();
+  const [overlayOpen, setOverlayOpen] = React.useState(false);
+  const [overlayIndex, setOverlayIndex] = React.useState(1);
+  const handleClick = (e) => {
+    let id = e.target.id;
+    if (id === undefined) return;
+    id = id.replace("image-", "");
+    const mId = parseInt(id);
+    setOverlayIndex(mId);
+    setOverlayOpen(!overlayOpen);
+  };
+  const handleCloseClick = (e) => {
+    setOverlayOpen(false);
+  };
+  const renderOverlayComponent = (idx) => {
+    return !overlayOpen ? null : (
+      <div className={style.about__overlay}>
+        <div className={style.about__popup}>
+          <button onClick={handleCloseClick} className={style.close}>
+            &times;
+          </button>
+          <div className={style.content}>
+            <p className={style.about__desc}>{OverlayContents[idx - 1]}</p>
+          </div>
+        </div>
+      </div>
+    );
+  };
   const InternalPage = ({ courses }) => {
     return (
       <React.Fragment>
@@ -32,10 +68,12 @@ const Home = ({ carouselItems }) => {
               <CourseItem
                 key={"course-" + i}
                 title={course.title}
+                slug={course.slug}
+                description={course.description}
                 outlined={i % 2 === 0}
                 timeline={course.timeline}
                 descTitle={course.shortDescription}
-                outcomes={course.outcomes}
+                outcomes={[]}
                 image={course.image}
               />
             ))}
@@ -45,9 +83,11 @@ const Home = ({ carouselItems }) => {
           Pourquoi choisir l'académie des élites ?
         </h3>
         <section className={style.about__container}>
-          <div className={style.about__box}>
+          {renderOverlayComponent(overlayIndex)}
+          <button id="1" onClick={handleClick} className={style.about__box}>
             <StaticImage
               alt="mentor"
+              id="image-1"
               objectFit="contain"
               className={style.about__image}
               src={"../../../assets/images/mentor.png"}
@@ -55,52 +95,41 @@ const Home = ({ carouselItems }) => {
             <p className={style.about__title}>
               Mentors de niveau international
             </p>
-            <div className={style.about__overlay}>
-              <div className={style.about__popup}>
-                <h2>Here i am</h2>
-                <a className={style.close}>&times;</a>
-                <div className={style.content}>
-                  <p className={style.about__desc}>
-                    Les programmes offerts sont soigneusement préparés par des
-                    mentors congolais qui ont bénéficié d’une éducation
-                    internationale au Canada et aux USA et évoluent dans des
-                    entreprises de renom dans le domaine de la technologie
-                    telles que Microsoft (USA) et Rhetorik (Canada)
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={style.about__box}>
+          </button>
+          <button id="2" onClick={handleClick} className={style.about__box}>
             <StaticImage
               alt="mentor"
+              id="image-2"
               objectFit="contain"
               className={style.about__image}
               src={"../../../assets/images/qualify.png"}
             />
             <p className={style.about__title}>Coach Qualifiés et pratiquants</p>
-          </div>
-          <div className={style.about__box}>
+          </button>
+          <button id="3" onClick={handleClick} className={style.about__box}>
             <StaticImage
               alt="mentor"
+              id="image-3"
               objectFit="contain"
               className={style.about__image}
               src={"../../../assets/images/computer.png"}
             />
             <p className={style.about__title}>Lab Creative (Canada)</p>
-          </div>
-          <div className={style.about__box}>
+          </button>
+          <button id="4" onClick={handleClick} className={style.about__box}>
             <StaticImage
               alt="mentor"
+              id="image-4"
               objectFit="contain"
               className={style.about__image}
               src={"../../../assets/images/pedagogie.png"}
             />
             <p className={style.about__title}>Methode Harkness (USA)</p>
-          </div>
-          <div className={style.about__box}>
+          </button>
+          <button id="5" onClick={handleClick} className={style.about__box}>
             <StaticImage
               alt="mentor"
+              id="image-5"
               objectFit="contain"
               className={style.about__image}
               src={"../../../assets/images/professional.png"}
@@ -108,16 +137,17 @@ const Home = ({ carouselItems }) => {
             <p className={style.about__title}>
               Environnement Professionnel et Sérieux
             </p>
-          </div>
-          <div className={style.about__box}>
+          </button>
+          <button id="6" onClick={handleClick} className={style.about__box}>
             <StaticImage
               alt="mentor"
+              id="image-6"
               objectFit="contain"
               className={style.about__image}
               src={"../../../assets/images/certificat.png"}
             />
             <p className={style.about__title}>Certificat</p>
-          </div>
+          </button>
         </section>
         <section className={style["help__section"]}>
           <h3 className={style["help__main__title"]}>Besoin d&apos;une aide</h3>
