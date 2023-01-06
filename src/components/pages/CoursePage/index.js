@@ -1,17 +1,17 @@
 import {
   faCircleArrowRight,
   faCircleCheck,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image';
-import React from 'react';
-import { ROUTES } from '../../../common/constants';
-import { ButtonRounded } from '../../Button';
-import Page from '../../PageTemplate';
-import * as style from './CoursePage.module.scss';
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
+import React from "react";
+import { ROUTES } from "../../../common/constants";
+import { ButtonRounded } from "../../Button";
+import Page from "../../PageTemplate";
+import * as style from "./CoursePage.module.scss";
 
 const CoursePage = ({ course, otherCourses }) => {
-  const outcomesList = course.outcomes.split(',');
+  const outcomesList = course.outcomes.split(",");
 
   const renderCoursePage = () => (
     <React.Fragment>
@@ -25,8 +25,8 @@ const CoursePage = ({ course, otherCourses }) => {
         <section className={style.hero}>
           <StaticImage
             className={style.hero__image}
-            src={'../../../assets/images/banner01.png'}
-            objectFit={'cover'}
+            src={"../../../assets/images/banner01.png"}
+            objectFit={"cover"}
           />
           <div className={style.hero__overlay}>
             <div className={style.overlay_left}>
@@ -36,12 +36,12 @@ const CoursePage = ({ course, otherCourses }) => {
               <p className={style.course__desc}>{course.shortDescription}</p>
               <ButtonRounded
                 url={ROUTES.SIGNUP}
-                text={'Démarez votre formation'}
+                text={"Démarez votre formation"}
                 rightIcon={faCircleArrowRight}
               />
             </div>
             <div className={style.overlay_right}>
-              <p className={style.course__title}>{`Modules`}</p>
+              <p className={style.course__title_module}>{`Modules`}</p>
               <ul className={style.course__outcomes_list}>
                 {outcomesList.map((item, i) => {
                   return (
@@ -63,7 +63,7 @@ const CoursePage = ({ course, otherCourses }) => {
               return (
                 <div className={style.other__item}>
                   <GatsbyImage
-                    objectFit={'contain'}
+                    objectFit={"contain"}
                     alt={`${item.title} image`}
                     className={style.other__image}
                     image={getImage(item.image)}
@@ -81,8 +81,8 @@ const CoursePage = ({ course, otherCourses }) => {
           <div className={style.course__detail}>
             <StaticImage
               className={style.course__preview}
-              src={'../../../assets/images/img-aside.png'}
-              objectFit={'cover'}
+              src={"../../../assets/images/img-aside.png"}
+              objectFit={"cover"}
             />
             <p className={style.preview__title}>Overview</p>
             <p className={style.preview__description}>{course.description}</p>
@@ -91,7 +91,7 @@ const CoursePage = ({ course, otherCourses }) => {
       </div>
     </React.Fragment>
   );
-  return <Page activeRoute={ROUTES.ACADEMY} >{renderCoursePage}</Page>;
+  return <Page activeRoute={ROUTES.ACADEMY}>{renderCoursePage}</Page>;
 };
 
 export default CoursePage;
