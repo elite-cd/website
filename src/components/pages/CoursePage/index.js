@@ -3,6 +3,7 @@ import {
   faCircleCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "gatsby";
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import { ROUTES } from "../../../common/constants";
@@ -60,20 +61,23 @@ const CoursePage = ({ course, otherCourses }) => {
         <section className={style.details}>
           <div className={style.courses__section}>
             {otherCourses.map((item, i) => {
+              const courseLink = `/courses/${item.slug}`;
               return (
                 <div className={style.other__item}>
-                  <GatsbyImage
-                    objectFit={"contain"}
-                    alt={`${item.title} image`}
-                    className={style.other__image}
-                    image={getImage(item.image)}
-                  />
-                  <p className={style.other__title}> {item.title} </p>
-                  <p className={style.other__timeline}>{item.timeline}</p>
-                  <hr className={style.other__divider} />
-                  <p className={style.other__description}>
-                    {item.shortDescription}
-                  </p>
+                  <Link to={courseLink}>
+                    <GatsbyImage
+                      objectFit={"contain"}
+                      alt={`${item.title} image`}
+                      className={style.other__image}
+                      image={getImage(item.image)}
+                    />
+                    <p className={style.other__title}> {item.title} </p>
+                    <p className={style.other__timeline}>{item.timeline}</p>
+                    <hr className={style.other__divider} />
+                    <p className={style.other__description}>
+                      {item.shortDescription}
+                    </p>
+                  </Link>
                 </div>
               );
             })}
