@@ -41,7 +41,7 @@
   display: none;
   @media (max-width: 768px) {
     display: block;
-    height: 50vh;
+    height: 60vh;
   }
 }
 
@@ -51,9 +51,9 @@
   left: 0rem;
   display: flex;
   flex-direction: column;
-  padding: 4rem;
-  justify-content: flex-start;
-  height: 100%;
+  padding: 0 4rem;
+  justify-content: center;
+  height: 80%;
   width: 50%;
 }
 
@@ -70,6 +70,7 @@
 .subtitleContainer {
   background-color: #fff;
   margin: 1rem 0;
+  display: none;
   width: fit-content;
   padding: 0 0.3rem 0 0;
   @media (max-width: 768px) {
@@ -96,6 +97,7 @@
 .count {
   font-family: "GothamMedium";
   font-size: 2.1rem;
+  display: none;
   color: #fff;
 }
 
@@ -135,7 +137,7 @@
   }
 
   .count_xs {
-    display: block;
+    display: none;
     font-family: "GothamMedium";
     font-size: 2.1rem;
     margin: 1rem 0;

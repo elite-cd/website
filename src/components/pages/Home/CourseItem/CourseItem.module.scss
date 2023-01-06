@@ -4,13 +4,46 @@
   justify-content: center;
 }
 
+.text {
+  font-size: 0.8rem;
+  margin: 0;
+  &_bold {
+    @extend .text;
+    font-family: "GothamMedium";
+  }
+  &_regular {
+    @extend .text;
+    font-family: "GothamRegular";
+  }
+}
+
+.btn_container {
+  position: absolute;
+  bottom: 1rem;
+}
+
+.outcomes {
+  font-family: "GothamRegular";
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.3rem !important;
+}
+
 .item,
 .item__outlined {
-  padding: 2rem;
+  padding: 1.6rem;
+  position: relative;
+  height: 27rem;
+  width: 18rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 2rem;
+  @media (max-width: 768px) {
+    margin: 0;
+    box-shadow: 0;
+    width: 20rem;
+  }
 }
 
 .body {
@@ -23,12 +56,19 @@
   height: 8rem;
   bottom: -2rem;
   align-self: center;
+  z-index: 2;
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .item {
   background-color: #046059;
   color: #fff;
   box-shadow: 0 0 0.3rem rgb(0 0 0 / 30%);
+  @media (max-width: 768px) {
+    box-shadow: 0;
+  }
 }
 
 .bodylist__item {
@@ -42,7 +82,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-family: 'GothamLight';
+  font-family: "GothamLight";
 }
 
 .hr {
@@ -50,7 +90,7 @@
 }
 
 .bodytitle {
-  font-family: 'GothamMedium';
+  font-family: "GothamMedium";
   font-size: small;
   text-align: center;
 }
@@ -60,6 +100,10 @@
   background-color: #fff;
   color: #000;
   box-shadow: 0 0 0.3rem 0 rgb(4 96 89 / 70%);
+  @media (max-width: 768px) {
+    box-shadow: none;
+    border: 0;
+  }
 }
 
 .courselist {
@@ -73,24 +117,27 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  font-family: 'GothamMedium';
+  font-family: "GothamMedium";
   justify-content: center;
 }
 
+.headertitle__outlined,
 .headertitle {
+  text-align: center;
   font-weight: bold;
-  margin: 0;
+  margin: 1rem 0;
+}
+
+.headertitle {
   color: #e9ab3e;
 }
 
 .headertitle__outlined {
-  font-weight: bold;
-  margin: 0;
   color: #046059;
 }
 
 .header__timeline {
   margin: 1rem 0 0rem 0;
   color: #e0e0e0;
-  font-family: 'GothamMedium';
+  font-family: "GothamMedium";
 }

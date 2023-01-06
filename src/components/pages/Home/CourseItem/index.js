@@ -1,54 +1,59 @@
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import T from 'prop-types';
-import * as React from 'react';
-import ButtonOutlined from '../../../Button/button-outlined';
-import ButtonPrimary from '../../../Button/button-primary';
-import * as style from './CourseItem.module.scss';
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import T from "prop-types";
+import * as React from "react";
+import { ButtonLink } from "../../../Button";
+import * as style from "./CourseItem.module.scss";
 const CourseItem = ({
   title,
   timeline,
+  price,
   descTitle,
+  description,
+  slug,
   outcomes,
   outlined,
   image,
 }) => {
-  const classNameVariation = outlined ? '__outlined' : '';
+  const classNameVariation = outlined ? "__outlined" : "";
+
   return (
     <div className={style.wrapper}>
       <GatsbyImage
         fluid={image.childImageSharp.fluid}
-        objectFit={'contain'}
+        objectFit={"contain"}
         alt={`${title} image`}
         className={style.item__image}
         image={getImage(image)}
       />
-      <div className={style['item' + classNameVariation]}>
+      <div className={style["item" + classNameVariation]}>
         <div className={style.header}>
-          <h3 className={style['headertitle' + classNameVariation]}>{title}</h3>
-          <p className={style.header__timeline}>{timeline}</p>
+          <h3 className={style["headertitle" + classNameVariation]}>{title}</h3>
         </div>
-        <hr className={style.hr} />
         <div className={style.body}>
           <h3 className={style.bodytitle}>{descTitle}</h3>
-          <ul className={style.bodylist}>
-            {outcomes &&
-              outcomes.map((outcome, index) => {
-                return (
-                  <li
-                    className={style.bodylist__item}
-                    key={`outcome__${index}`}
-                  >
-                    {outcome}
-                  </li>
-                );
-              })}
-          </ul>
+          <p className={style.outcomes}>{description}</p>
+          <p className={style.text_bold}>
+            Durée: <span className={style.text_regular}>{timeline}</span>
+          </p>
+          <p className={style.text_bold}>
+            Prix: <span className={style.text_regular}>{price}$/mois</span>
+          </p>
         </div>
-        {outlined ? (
-          <ButtonPrimary text={'En savoir plus'} />
-        ) : (
-          <ButtonOutlined text={'En savoir plus'} />
-        )}
+        <div className={style.btn_container}>
+          {outlined ? (
+            <ButtonLink
+              url={`/courses/${slug}`}
+              className={"button__primary"}
+              text={"En savoir plus"}
+            />
+          ) : (
+            <ButtonLink
+              url={`/courses/${slug}`}
+              className={"button__outlined"}
+              text={"En savoir plus"}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
