@@ -16,7 +16,6 @@ const Enregistrement = () => {
               Enregistrement
             </span>
           </p>
-          <h3 className={style["page__title"]}>Contact</h3>
           <div className={style["page__header"]}>
             <h3 className={style.title}>Enregistrement</h3>
             <p className={style.subtitle}>
