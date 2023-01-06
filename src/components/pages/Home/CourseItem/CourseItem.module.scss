@@ -10,6 +10,9 @@
   &_bold {
     @extend .text;
     font-family: "GothamMedium";
+    @media only screen and (max-width: 768px) {
+      text-align: center;
+    }
   }
   &_regular {
     @extend .text;
